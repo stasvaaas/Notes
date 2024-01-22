@@ -1,0 +1,18 @@
+﻿@model Models.Note
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<h1>Details</h1>
+<br />
+Name: @Model.Name
+<br />
+Priority: @Model.Priority
+<br />
+Value: @Model.Value
+<br />
+
+                    <a asp-controller="Note" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+                    <a asp-controller="Note" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
+                    <a asp-controller="Note" asp-action="Index"> Back</a>
+

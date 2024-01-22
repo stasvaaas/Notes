@@ -1,0 +1,22 @@
+﻿@model Models.Note
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Edit</h1>
+
+<form method="post" asp-action="DeleteNote">
+    <input asp-for="Id" hidden/>
+    <h2>Create a note</h2>
+    <label asp-for="Name">Name</label>
+    <input asp-for="Name" />
+    <br />
+    <label asp-for="Value">Value</label>
+    <input asp-for="Value" />
+    <br />
+    <label asp-for="Priority">Priority</label>
+    <input asp-for="Priority" />
+    <br />
+    <button type="submit">Delete</button>
+    <a asp-controller="Note" asp-action="Index">Back to list</a>
+</form>

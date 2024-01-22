@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Models.Note>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+    <a asp-controller="Note" asp-action="Create">Create a new note</a>
+   <br />
+   <table>
+       <thead>
+           <tr>
+               <th>
+                   Name
+               </th>
+               <th>
+                   Details
+               </th><th>
+                   Priority
+               </th>
+               <th></th>
+           </tr>
+       </thead>
+       <tbody>
+            @foreach (var x in Model)
+            {
+                <tr>
+                    <td>
+                        @x.Name
+                    </td>
+                    <td>
+                        @x.Value
+                    </td>
+                <td>
+                    @x.Priority
+                </td>
+                    <td>
+                        <a asp-controller="Note" , asp-action="Edit" asp-route-id="@x.Id">Edit</a>
+                    <a asp-controller="Note" asp-action="Detail" asp-route-id="@x.Id"> Details</a>
+                    </td>
+                </tr>
+            }
+       </tbody>
+        
+    </table>
