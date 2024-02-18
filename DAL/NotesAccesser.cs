@@ -20,9 +20,9 @@ namespace DAL
             return _db.Notes.ToList();
         }
 
-        public void Create(Note obj)
+        public void Create(Note note)
         {
-            _db.Notes.Add(obj);
+            _db.Notes.Add(note);
             _db.SaveChanges();
         }
 

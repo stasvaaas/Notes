@@ -9,6 +9,10 @@ namespace NotesProcessor
 {
     public interface INotesProcessor
     {
-        public IList<Note> GetNotesByPriority(int priority);
+        public void Create(Note note);
+        public Note GetNote(Guid id);
+        public void Update(Note note);
+        public void Delete(Guid id);
+        public IEnumerable<Note> GetAll();
     }
 }

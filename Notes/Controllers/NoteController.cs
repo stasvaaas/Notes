@@ -1,32 +1,31 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using DAL;
 using Models;
 using Microsoft.CodeAnalysis;
 using Microsoft.EntityFrameworkCore;
 using NotesProcessor;
+using DAL;
 namespace Notes.Controllers
 {
     public class NoteController : Controller
     {
-        //private readonly NotesContext _db;
-        private readonly INotesAccesser _accesser;
-        public NoteController(INotesAccesser accesser)
+        private readonly INotesProcessor _processor;
+        public NoteController(INotesProcessor processor)
         {
 
-            _accesser = accesser;
+            _processor = processor;
         }
 
 
 
         public IActionResult Index()
         {
-            IEnumerable<Note> objNotesList = _accesser.GetAll();
+            IEnumerable<Note> objNotesList = _processor.GetAll();
             return View(objNotesList);
         }
 
         public IActionResult Detail(Guid id)
         {
-            Note note = _accesser.GetNote(id);
+            Note note = _processor.GetNote(id);
 
             if (note is null)
                 return NotFound();
@@ -47,7 +46,7 @@ namespace Notes.Controllers
         {
             if (ModelState.IsValid)
             {
-                _accesser.Create(obj);
+                _processor.Create(obj);
                 return RedirectToAction("Index");
             }
             return View(obj);
@@ -60,7 +59,7 @@ namespace Notes.Controllers
             {
                 return NotFound();
             }
-            Note note = _accesser.GetNote(id);
+            Note note = _processor.GetNote(id);
             return View(note);
         }
 
@@ -71,7 +70,7 @@ namespace Notes.Controllers
         {
             if(ModelState.IsValid)
             {
-                _accesser.Update(obj);
+                _processor.Update(obj);
                 return RedirectToAction("Index");
             }
             return View(obj);
@@ -84,7 +83,7 @@ namespace Notes.Controllers
             {
                 return NotFound();
             }
-            _accesser.Delete(id);
+            _processor.Delete(id);
             return RedirectToAction("Index");
         }
 

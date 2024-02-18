@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NotesProcessor", "NotesProc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL", "DAL\DAL.csproj", "{93F66A28-F3BB-4F62-AD1F-3CCC1E00E1A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{C5AF6B1C-1714-4E0A-B95A-2EF768F2F06F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "Models\Models.csproj", "{C5AF6B1C-1714-4E0A-B95A-2EF768F2F06F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NotesProcessor.Tests", "NotesProcessor.Tests\NotesProcessor.Tests.csproj", "{87BE9EC8-7286-4522-9576-E18ECB3E11F9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{C5AF6B1C-1714-4E0A-B95A-2EF768F2F06F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5AF6B1C-1714-4E0A-B95A-2EF768F2F06F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5AF6B1C-1714-4E0A-B95A-2EF768F2F06F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87BE9EC8-7286-4522-9576-E18ECB3E11F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87BE9EC8-7286-4522-9576-E18ECB3E11F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87BE9EC8-7286-4522-9576-E18ECB3E11F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87BE9EC8-7286-4522-9576-E18ECB3E11F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

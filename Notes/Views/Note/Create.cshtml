@@ -5,20 +5,26 @@
 
 <h1>Create</h1>
 
-<form method="post">
-    <h2>Create a note</h2>
-    <label asp-for="Name">Name</label>
-    <input asp-for="Name" />
-    <span asp-validation-for="Name"></span>
-    <br />
-    <label asp-for="Value">Value</label>
-    <input asp-for="Value" />
-    <span asp-validation-for="Value"></span>
-    <br />
-    <label asp-for="Priority">Priority</label>
-    <input asp-for="Priority" />
-    <span asp-validation-for="Priority"></span>
-    <br />
-    <button type="submit">Create</button>
-    <a asp-controller="Note" asp-action="Index">Back to list</a>
+
+<form method="post" asp-action="Create">
+    <div class="form-group">
+        <label asp-for="Name">Name</label>
+        <input asp-for="Name" asp-validation-for="Name" type="text" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="Value">Example textarea</label>
+        <textarea asp-for="Value" asp-validation-for="Value" class="form-control" rows="3"></textarea>
+    </div>
+    <div class="form-group">
+        <label asp-for="Priority">Select priority</label>
+        <select asp-for="Priority" asp-validation-for="Priority" class="form-control">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+    <a type="button" class="btn btn-link" asp-controller="Note" asp-action="Index">Back to list</a>
 </form>

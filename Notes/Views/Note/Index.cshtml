@@ -1,44 +1,32 @@
 ﻿@model IEnumerable<Models.Note>
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "View";
 }
 
-<h1>Index</h1>
-    <a asp-controller="Note" asp-action="Create">Create a new note</a>
-   <br />
-   <table>
-       <thead>
-           <tr>
-               <th>
-                   Name
-               </th>
-               <th>
-                   Details
-               </th><th>
-                   Priority
-               </th>
-               <th></th>
-           </tr>
-       </thead>
-       <tbody>
-            @foreach (var x in Model)
-            {
-                <tr>
-                    <td>
-                        @x.Name
-                    </td>
-                    <td>
-                        @x.Value
-                    </td>
-                <td>
-                    @x.Priority
-                </td>
-                    <td>
-                        <a asp-controller="Note" , asp-action="Edit" asp-route-id="@x.Id">Edit</a>
-                    <a asp-controller="Note" asp-action="Detail" asp-route-id="@x.Id"> Details</a>
-                    </td>
-                </tr>
-            }
-       </tbody>
-        
-    </table>
+ <div class="album py-5 bg-light">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+             @foreach (var x in Model)
+                {
+                    <div class="col">
+               
+                        <div class="card shadow-sm">
+                            <p class="card-text">@x.Name</p>
+                            <div class="card-body">
+                                <p class="card-text">@x.Value</p>
+                                <p class="card-text">Priority: @x.Priority</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <a class="btn btn-sm btn-outline-secondary" asp-controller="Note" asp-action="Detail" asp-route-id="@x.Id"> Details</a>
+                                        <a class="btn btn-sm btn-outline-secondary" asp-controller="Note" asp-action="Edit" asp-route-id="@x.Id"> Edit</a>
+                                    </div>
+                                        <small class="text-muted">9 mins</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+

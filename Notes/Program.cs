@@ -20,8 +20,8 @@ namespace Notes
                     .GetConnectionString("notes"));
             });
             builder.Services.AddScoped<INotesAccesser, NotesAccesser>();
-            builder.Services.AddScoped<INotesProcessor, NotesProcessorN>();
-            
+            builder.Services.AddScoped<INotesProcessor, NotesProcessors>();
+
 
             var app = builder.Build();
 
